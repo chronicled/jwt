@@ -1,0 +1,17 @@
+{
+  "name": "jwt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha jwt-spec.js --timeout 5000",
+    "test:watch": "mocha --timeout 5000 --watch *.js jwt-spec.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jsonwebtoken": "^5.0.0",
+    "lodash": "^3.7.0",
+    "should": "^6.0.1"
+  }
+}
