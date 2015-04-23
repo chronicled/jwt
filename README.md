@@ -21,34 +21,34 @@ First, we initialize a JWT processor.
 This takes the contents of our RSA private key file as a string (or Buffer).
 
 ```js
-  var jwt = new JWT(privateKey);
+var jwt = new JWT(privateKey);
 ```
 
 Let's generate a token. This is a plain Javascript object that should contain the user, their permissions, etc.
 
 ```js
-  var payload = {
-    user: {
-      nickname: 'duncan',
-      name: 'Duncan Smith',
-      email: 'duncan@chronicled.com',
-      roles: ['admin', 'user']
-    }
-  };
-  
-  var token = jwt.sign(payload);
+var payload = {
+  user: {
+    nickname: 'duncan',
+    name: 'Duncan Smith',
+    email: 'duncan@chronicled.com',
+    roles: ['admin', 'user']
+  }
+};
+
+var token = jwt.sign(payload);
 ```
 
 Now that we have the token, we send it back to the client so they can use it to authenticate all requests from here on out.
 
-Later on (most likely in a middleware), we'll want to verify the token (to make sure it hasn't been tampered with), and decode it (so that we can use the inforation contained within).
+Later on (most likely in a middleware), we'll want to verify the token (to make sure it hasn't been tampered with), and decode it (so that we can use the inforation contained within). We'll need to pass in the public key information as well (again, as a string or Buffer).
 
 ```js
-  verifiedToken = jwt.verify(token, publicKey);
+var verifiedToken = jwt.verify(token, publicKey);
 
-  if (verifiedToken.valid) {
-    console.log(verifiedToken.user); // => {nickame: 'duncan', name: 'Duncan Smith', email: 'duncan@chronicled.com', roles: ['admin', 'user']}
-  }
+if (verifiedToken.valid) {
+  console.log(verifiedToken.user); // => {nickame: 'duncan', name: 'Duncan Smith', email: 'duncan@chronicled.com', roles: ['admin', 'user']}
+}
 ```
 
 If the token is invalid (malformed, expired, etc), we can check the `reason` property to find out why:
@@ -60,8 +60,8 @@ console.log(invalidToken.reason); // => 'Token is expired.'
 **Protip: to generate a public/private key pair:**
 
 ```sh
-  openssl genrsa -out key.pem 2048 # Generate a private key
-  openssl rsa -in key.pem -pubout >> key.pub # Generate a public key from the private key
+openssl genrsa -out key.pem 2048 # Generate a private key
+openssl rsa -in key.pem -pubout >> key.pub # Generate a public key from the private key
 ```
 
 ## Hacking
