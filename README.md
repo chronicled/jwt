@@ -4,10 +4,10 @@ A simplified wrapper around [jsonwebtoken](https://github.com/auth0/node-jsonweb
 
 Defaults:
  - Token expiry: 1 month
- - Algorithm: RSA ('RS256')
- - Issuer: 'ch:server'
- - Audience: 'ch:client'
- - Subject: 'ch:login'
+ - Algorithm: RSA (`'RS256'`)
+ - Issuer: `'ch:server'`
+ - Audience: `'ch:client'`
+ - Subject: `'ch:login'`
 
 ## Usage
 
