@@ -2,7 +2,7 @@
   "name": "jwt",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "jwt.js",
   "scripts": {
     "test": "mocha jwt-spec.js --timeout 5000",
     "test:watch": "mocha --timeout 5000 --watch *.js jwt-spec.js"
