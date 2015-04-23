@@ -21,6 +21,13 @@ Defaults:
   var verifiedToken = jwt.verify(token, publicKey);
 ```
 
+To generate a public/private key pair:
+
+```sh
+  openssl genrsa -out key.pem 2048 # Generate a private key
+  openssl rsa -in key.pem -pubout >> key.pub # Generate a public key from the private key
+```
+
 ## Hacking
 
 Tests are written with Mocha and Should.js.
