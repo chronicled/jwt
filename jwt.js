@@ -109,7 +109,8 @@ function isValidPrivateKey (secret) {
 }
 
 function isValidPublicKey (cert) {
-  return cert.toString('utf8').indexOf('-----BEGIN PUBLIC KEY-----') === 0;
+  var certStr = cert.toString('utf8');
+  return certStr.indexOf('-----BEGIN PUBLIC KEY-----') === 0 || certStr.indexOf('-----BEGIN CERTIFICATE-----') === 0;
 }
 
 function includedKeys(obj, keys) {
