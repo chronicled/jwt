@@ -1,5 +1,5 @@
 {
-  "name": "jwt",
+  "name": "@chronicled/jwt",
   "version": "1.0.1",
   "description": "",
   "main": "jwt.js",
