@@ -1,7 +1,7 @@
 {
   "name": "@chronicled/jwt",
   "version": "1.0.1",
-  "description": "",
+  "description": "A simplified wrapper around [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken).",
   "main": "jwt.js",
   "scripts": {
     "test": "mocha jwt-spec.js --timeout 5000",
@@ -13,5 +13,13 @@
     "jsonwebtoken": "^5.0.0",
     "lodash": "^3.7.0",
     "should": "^6.0.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chronicled/jwt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chronicled/jwt/issues"
+  },
+  "homepage": "https://github.com/chronicled/jwt"
 }
