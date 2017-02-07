@@ -1,6 +1,6 @@
 {
   "name": "@chronicled/jwt",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simplified wrapper around [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken).",
   "main": "jwt.js",
   "scripts": {

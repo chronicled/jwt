@@ -18,7 +18,6 @@ function JWT (secret, options) {
   _.extend(this, this._signingOptions);
 
   if (!this.secret) {
-    warnPrivateKey();
     this._noKey = true;
   }
   else {
